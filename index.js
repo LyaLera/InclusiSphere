@@ -83,29 +83,28 @@ let sectionQuestionCard = document.getElementById("question-card")
 let newQuestionsArray = JSON.parse(localStorage.getItem("questions")) || []
 let newAnswersArray = JSON.parse(localStorage.getItem("answers")) || []
 
-predefinedQuestions.forEach((question) => {
-    let questionDiv = document.createElement("div")
-    let predifinednAswersHTML = predefinedAnswers
-    .filter((answer) => answer.questionId == question.id)
-    .map((answer) => `<p>${answer.text}</p>`)
-    .join("");
-    let newAnswersHTML = newAnswersArray
-    .filter((answer) => answer.questionId == question.id)
-    .map((answer) => `<p>${answer.text}</p>`)
-    .join("");
-    questionDiv.innerHTML = `
-        <div style="border: solid 1px black">
-            <p>${question.text}</p>
-            <p> ${predifinednAswersHTML} </p>
-            <p> ${newAnswersHTML} </p>
-            <form>
-            <input id="answer-input"/>
-            <button onclick="addAnswer(${question.id})">Answer</button>
-            </form>
-        </div>
-    `
-    sectionQuestionCard.appendChild(questionDiv)   
-})
+function render(questions, answers) {
+    // TODO - destroy existing DOM for the questions and answers
+    sectionQuestionCard.innerHTML = ""
+    questions.forEach((question) => {
+        let questionDiv = document.createElement("div")
+        let newAnswersHTML = answers
+        .filter((answer) => answer.questionId == question.id)
+        .map((answer) => `<p>${answer.text}</p>`)
+        .join("");
+        questionDiv.innerHTML = `
+            <div style="border: solid 1px black">
+                <p>${question.text}</p>
+                <p> ${newAnswersHTML} </p>
+                <input id="answer-${question.id}" class="answer-input"/>
+                <button data-id=${question.id} onclick="addAnswer(event)">Answer</button>
+            </div>
+        `
+        sectionQuestionCard.appendChild(questionDiv)   
+    })
+}
+
+render([...predefinedQuestions, ...newQuestionsArray],[...predefinedAnswers, ...newAnswersArray])
 
 function addQuestion() {
     let inputQuestion = document.getElementById("question-input").value
@@ -116,48 +115,36 @@ function addQuestion() {
         userId: "2", 
         createdAt: new Date,
     }
+    
     newQuestionsArray.push(newQuestion)
     localStorage.setItem("questions", JSON.stringify(newQuestionsArray));
     } 
     else {
         alert("Please enter a valid question.")
     }
+    render([...predefinedQuestions, ...newQuestionsArray],[...predefinedAnswers, ...newAnswersArray])
 }
 
-function addAnswer(questionId) {
-    let inputAnswer = document.getElementById("answer-input").value
+function addAnswer(event) {
+    let inputAnswer = document.getElementById("answer-" + event.target.dataset.id).value
     if (inputAnswer !== "") {
     let newAnswer = {
         id: uuidv4(),
         text: inputAnswer,
         userId: "1", 
         createdAt: new Date,
-        questionId: questionId
+        questionId: event.target.dataset.id
     }
+
     newAnswersArray.push(newAnswer)
     localStorage.setItem("answers", JSON.stringify(newAnswersArray));
    } else {
     alert("Please enter a valid answer.")
     }
+    render([...predefinedQuestions, ...newQuestionsArray],[...predefinedAnswers, ...newAnswersArray])
 }
 
-newQuestionsArray.forEach((question) => {
-    let questionDiv = document.createElement("div")
-    // let answersHTML = newQuestionsArray
-    // .filter((answer) => answer.questionId === question.id)
-    // .map((answer) => `<p>${answer.text}</p>`)
-    // .join("");
-    questionDiv.innerHTML = `
-        <div style="border: solid 1px black">
-            <p>${question.text}</p>
-            <form>
-            <input id="answer-input"/>
-            <button onclick="addAnswer(${question.id})">Answer</button>
-            </form>
-        </div>
-    `
-    sectionQuestionCard.appendChild(questionDiv)   
-})
+
 
 
 document.getElementById("add-question-button").addEventListener("click", addQuestion)
