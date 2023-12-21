@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.2/font/bootstrap-icons.min.css"
+      integrity="sha512-D1liES3uvDpPrgk7vXR/hR/sukGn7EtDWEyvpdLsyalQYq6v6YUsTUJmku7B4rcuQ21rf0UTksw2i/2Pdjbd3g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>InclusiSphere</title>
+  </head>
+
+  <body>
+    <header>
+        <div class="header-content">
+          <img src="./image/globe-2091853_1280.jpg" alt="" />
+          <h1>InclusiSphere</h1>
+          <button class="CTA-Button">Join Our Community</button>
+        </div>
+        <div class="navigation">
+          <nav>
+            <ul class="nav-links">
+              <li><a href="#">What are we?</a></li>
+              <li><a href="#">Events</a></li>
+              <li><a href="#">Resources</a></li>
+              <li><a href="#">Join Our Team</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+    <main>
+      <section>
+        <div class="question-card">
+          <h2>Ask us a question</h2>
+          <input
+            class="input-field"
+            id="question-input"
+            type="text"
+            placeholder="...type in your questions"
+          />
+          <button class="ask-btn" id="add-question-button" type="submit">
+            Ask
+          </button>
+
+          <label for="searchbox">Search</label>
+          <input type="text" id="searchbox"/>
+        </div>
+      </section>
+
+      <section id="main-cards">
+        <div
+          class="question-answer"
+          data-current-page="1"
+          aria-live="polite"
+          id="paginated-list"
+        >
+          <div class="question-boxes" >
+
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+        <p class="footer_header">Follow the dialogue on our socials</p>
+        <div class="social-icons">
+          <a href=""><i class="bi bi-instagram"></i></a>
+          <a href=""><i class="bi bi-facebook"></i></a>
+          <a href=""> <i class="bi bi-twitter-x"></i></a>
+        </div>
+        <p>&copy;2023 All Rights Reserved</p>
+      </footer>
+    
+    <!-- <section class="pagination-container">
+      <button
+        class="pagination-button"
+        id="prev-button"
+        aria-label="Previous page"
+        title="Previous page"
+      >
+        &lt;
+      </button>
+
+      <div id="pagination-numbers"></div>
+
+      <button
+        class="pagination-button"
+        id="next-button"
+        aria-label="Next page"
+        title="Next page"
+      >
+        &gt;
+      </button>
+    </section> -->
+
+    <script src="index.js"></script>
+  </body>
+</html>
