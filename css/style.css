@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Rubik:wght@600;700;800&display=swap");
-
 * {
   box-sizing: border-box;
 }
@@ -10,7 +9,6 @@ main {
     sans-serif;
   background-color: rgb(247, 247, 242);
 }
-
 h1 {
   font-family: "Rubik", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -24,9 +22,6 @@ li a {
 }
 h2 {
   margin-left: 70px;
-}
-header {
-  margin-bottom: 40px;
 }
 header img {
   width: 100px;
@@ -47,20 +42,20 @@ header img {
 .nav-links {
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  height: 80px;
+  background-color: rgb(229, 229, 237);
+  list-style-type: none;
+  text-decoration: none;
 }
 .CTA-Button {
   background-color: rgb(252, 187, 112);
   border: 1px solid rgb(252, 187, 112);
   border-radius: 60%;
-
   height: 60px;
   padding: 15px;
   color: white;
   font-weight: bold;
-}
-.nav-links {
-  list-style-type: none;
-  text-decoration: none;
 }
 .question-card {
   display: flex;
@@ -103,7 +98,6 @@ header img {
   grid-column: 1/3;
   grid-row: 3/4;
 }
-
 .question-1,
 .question-2,
 .question-3,
@@ -123,7 +117,6 @@ footer {
   align-items: center;
   justify-content: space-between;
 }
-
 .footer_header {
   font-size: 20px;
 }
@@ -131,7 +124,6 @@ footer {
   display: flex;
   width: 400px;
   height: 50px;
-
   justify-content: space-evenly;
   align-items: center;
 }
@@ -139,6 +131,7 @@ footer {
   font-size: 30px;
   color: rgb(234, 217, 217);
 }
+
 
 .pagination-number,
 .pagination-button {
