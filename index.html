@@ -16,36 +16,44 @@
 
   <body>
     <header>
-        <div class="header-content">
-          <img src="./image/globe-2091853_1280.jpg" alt="" />
-          <h1>InclusiSphere</h1>
-          <button class="CTA-Button">Join Our Community</button>
-        </div>
-        <div class="navigation">
-          <nav>
-            <ul class="nav-links">
-              <li><a href="#">What are we?</a></li>
-              <li><a href="#">Events</a></li>
-              <li><a href="#">Resources</a></li>
-              <li><a href="#">Join Our Team</a></li>
-            </ul>
-          </nav>
-        </div>
-      </header>
+      <div class="header-content">
+        <img src="./image/globe-2091853_1280.jpg" alt="" />
+        <h1>InclusiSphere</h1>
+        <button class="CTA-Button">
+          <a style="text-decoration: none; color: rgb(89, 84, 84)" href=""
+            >Join Our Community</a
+          >
+        </button>
+      </div>
+      <div class="navigation">
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#">What are we?</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Resources</a></li>
+            <li><a href="#">Join Our Team</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
     <main>
-        <section>
-                <p>
-                    What is gender-equality? Why are we constantly stressing about it? Why
-                    are women speaking out for their human rights? Are these the type of
-                    questions that you wonder about but may be too afraid to ask? Find some
-                    answers here. Type your question below and have another actual person
-                    around the world answer you! We're bringing the world closer and
-                    bridging gaps between gender-inequality, one question and answer at a
-                    time.
-                  </p>
-        </section>
-
+      <section>
+        <p class="Hero-paragraph">
+           <span style="display: block">
+            What is gender-equality? Why are we constantly stressing about it?
+            Why are women speaking out for their human rights? Are these the
+            type of questions that you wonder about but may be too afraid to
+            ask? Find some answers here.
+          </span>
+          <span style="display: block; margin-top: 10px"
+            >Type your question below and have another actual person around the
+            world answer you! We're bringing the world closer and bridging gaps
+            between gender-inequality, one question and answer at a time.</span
+          >
+        </p>
+        </p>
+      </section>
       <section>
         <div class="question-card">
           <h2>Ask us a question</h2>
@@ -60,7 +68,7 @@
           </button>
 
           <label for="searchbox">Search</label>
-          <input type="text" id="searchbox"/>
+          <input type="text" id="searchbox" />
         </div>
       </section>
 
@@ -71,43 +79,21 @@
           aria-live="polite"
           id="paginated-list"
         >
-          <div class="question-boxes" >
-
-          </div>
+          <div class="question-boxes"></div>
         </div>
       </section>
     </main>
     <footer>
-        <p class="footer_header">Follow the dialogue on our socials</p>
-        <div class="social-icons">
-          <a href=""><i class="bi bi-instagram"></i></a>
-          <a href=""><i class="bi bi-facebook"></i></a>
-          <a href=""> <i class="bi bi-twitter-x"></i></a>
-        </div>
-        <p>&copy;2023 All Rights Reserved</p>
-      </footer>
-    
-    <!-- <section class="pagination-container">
-      <button
-        class="pagination-button"
-        id="prev-button"
-        aria-label="Previous page"
-        title="Previous page"
-      >
-        &lt;
-      </button>
-
-      <div id="pagination-numbers"></div>
-
-      <button
-        class="pagination-button"
-        id="next-button"
-        aria-label="Next page"
-        title="Next page"
-      >
-        &gt;
-      </button>
-    </section> -->
+      <p class="footer_header">Follow the dialogue on our socials</p>
+      <div class="social-icons">
+     <a href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
+        <a href="https://twitter.com/?lang=en">
+          <i class="bi bi-twitter-x"></i
+        ></a>
+      </div>
+      <p>&copy;2023 All Rights Reserved</p>
+    </footer>
 
     <script src="index.js"></script>
   </body>
