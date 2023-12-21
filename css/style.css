@@ -140,26 +140,6 @@ footer {
   color: rgb(234, 217, 217);
 }
 
-#main-cards {
-  position: relative;
-}
-
-.hidden {
-  display: none;
-}
-
-/* .is-hidden { display: none; } */
-
-.pagination-container {
-  width: calc(100% - 2rem);
-  display: flex;
-  align-items: center;
-  position: absolute;
-  bottom: 0;
-  padding: 1rem 0;
-  justify-content: center;
-}
-
 .pagination-number,
 .pagination-button {
   font-size: 1rem;
