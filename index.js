@@ -166,7 +166,7 @@ function render(questions, answers, currentPage = 1, itemsPerPage = 4) {
                     <p>${newAnswersHTML}</p>
                     <div class="input-1-box">
                         <input type="text" placeholder="Your answer!" id="answer-${question.id}" class="answer-input"/>
-                        <button data-id=${question.id} onclick="addAnswer(event)">Answer</button>
+                        <button class="answer-buuton" data-id=${question.id} onclick="addAnswer(event)">Answer</button>
                     </div>
                 </div>
         `;
